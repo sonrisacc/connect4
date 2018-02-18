@@ -1,3 +1,5 @@
+const event = require('./eventHandlers');
+
 const boardGenerator = target => {
   const colNum = 7;
   const rowNum = 6;
@@ -10,7 +12,13 @@ const boardGenerator = target => {
       const innerToken = document.createElement('div');
       innerToken.className = 'inner';
       row.className = `square square-${j}`;
-      if (j === 1) row.className = `square square-${j} hidden`;
+      if (j === 0) {
+        innerToken.className = `inner  col-${i}`;
+        row.className = `square square-${j} hidden`;
+      }
+      row.addEventListener('mouseover', event.findAndAddColor);
+      row.addEventListener('mouseleave', event.findAndRemoveColor);
+      innerToken.addEventListener('click', event.dropToken);
 
       row.append(innerToken);
       col.append(row);
