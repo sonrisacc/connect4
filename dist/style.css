@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-width: 600px;
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  flex-direction: column;
+  text-align: center;
+}
+
+.site-header {
+  padding: none;
+  margin: none;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.9rem;
+  background: #1f2532;
+  color: #ffffff;
+  width: 100%;
+  height: 50px;
+}
+
+.blueBtn {
+  background: #66c4cc;
+  color: #ffffff;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.container {
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+  padding: 100px;
+  border: 1px solid #d2d3d4;
+  min-width: 300px;
+  min-height: 300px;
+  position: relative;
+}
+
+#board {
+  display: block;
+  /* border-radius: 12px;
+  border: 6px solid lightblue; */
+  /* height: calc(100% - 80px); */
+  /* width: 100%; */
+  /* justify-content: center; */
+}
+
+.base {
+  display: grid;
+  grid-template-columns: repeat(7, 80px);
+  grid-template-rows: repeat(7, 80px);
+}
+.square {
+  display: flex;
+  background: lightblue;
+  justify-content: center;
+  /* align-content: center; */
+  border: 1px solid lightblue;
+  height: 100%;
+}
+
+.inner {
+  align-self: center;
+  /* align-items: center; */
+  /* position: absolute; */
+  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  background: white;
+}
+
+.hidden {
+  background: white;
+  border: none;
+}
