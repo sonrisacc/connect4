@@ -9,7 +9,6 @@ const mouseLeaveToken = curToken => {
 
 const togglePlayer = () => {
   const globalColor = document.querySelector('b[id="curColor"]');
-  console.log('11', globalColor);
   globalColor.innerText = globalColor.innerText === 'red' ? 'yellow' : 'red';
 };
 
@@ -23,9 +22,6 @@ const updateCurCol = e => {
 const annimateTokenDrop = (curColName, depth) => {
   const color = document.getElementById('curColor').innerHTML;
   const curColOfTokens = document.querySelector(`.col.${curColName}`).children;
-  console.log(curColOfTokens);
-  console.log(depth);
-  console.log(curColOfTokens[depth]);
   // will add annimation later
   // for (let i = 0; i < depth.length; i++) {
   curColOfTokens[depth].firstElementChild.classList.add(color);
