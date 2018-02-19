@@ -13,7 +13,7 @@
         </div>
       </div>
     </header>
-     <div class="container">
+      <div class="container">
         <div class="cur">
           <div>Current Player:<b id="curColor">red</b></div>
           <div id="curCol">1</div>
@@ -22,6 +22,17 @@
         <div id="board">
           <div class="base"></div>
         </div>
+        <div id="showWinner" class="modal">
+            <div class="modal-content">
+              <div id="curWinner"></div>
+                <footer>
+                  <button class="cancelBtn" id="closeModal">Cancel</button>
+                    <button class="blueBtn" id="newGame">New Game</button>
+                </footer>
+            </div>
+        </div>
+      </div>
+
     <script src="bundle.js" charset="utf-8"></script>
   </body>
 </html>

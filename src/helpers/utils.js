@@ -39,5 +39,8 @@ const resetGame = myNode => {
   // reset curCol
   domBoardGenerator(myNode);
 };
-
-module.exports = { domBoardGenerator, resetGame };
+const closeModal = () => {
+  const modal = document.getElementById('showWinner');
+  modal.style.display = 'none';
+};
+module.exports = { domBoardGenerator, resetGame, closeModal };

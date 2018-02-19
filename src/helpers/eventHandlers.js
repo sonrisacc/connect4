@@ -58,7 +58,7 @@ const playerPlayed = () => {
   const curColor = document.getElementById('curColor').innerText;
   const curGrid = JSON.parse(window.localStorage.getItem('colMaxDepth'));
   const curMaxDepth = curGrid[curCol];
-  const curColNum = curCol.slice(-1);
+  const curColNum = Number(curCol.slice(-1));
   annimateTokenDrop(curCol, curMaxDepth);
   referee.saveCurMove(curMaxDepth, curColNum, curColor); // row, col
 

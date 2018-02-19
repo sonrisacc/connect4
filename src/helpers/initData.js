@@ -24,7 +24,7 @@ const initBoard = () => {
     }
     board.push(row);
   }
-  console.log('board', board);
+  // console.log('board', board);
   initLocalStorage('board', board);
 };
 
