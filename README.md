@@ -1,5 +1,8 @@
 # Template for mini app
 
+![Alt text](./dist/connect4.png 'Example connect4 board')
+![Alt text](./dist/winner.png 'Example connect4 winner')
+
 ## Initial Setup
 
 1. Fork and clone the repo
@@ -9,14 +12,14 @@
 npm install
 ```
 
-3. Start NAMEOFREPO in dev mode by running:
+3. Start connectFour in dev mode by running:
 
 ```sh
 npm run build
 npm run dev
 ```
 
-or Start NAMEOFREPO by running:
+or Start connectFour by running:
 
 ```sh
 npm start
