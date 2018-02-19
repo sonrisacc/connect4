@@ -22,19 +22,22 @@ const updateCurCol = e => {
 };
 
 const annimateTokenDrop = (curColName, depth) => {
+  const audio = document.querySelector('audio');
   const color = document.getElementById('curColor').innerHTML;
   const curColOfTokens = document.querySelector(`.col.${curColName}`).children;
   // will add annimation later
   for (let i = 0; i < depth; i++) {
-    console.log('hey');
     curColOfTokens[i].firstElementChild.classList.add(color);
     const time = 10 + i * 30;
     setTimeout(() => {
-      console.log('anni running', i);
       curColOfTokens[i].firstElementChild.classList.remove(color);
+      if (i === depth - 1) {
+        curColOfTokens[depth].firstElementChild.classList.add(color);
+        audio.currentTime = 0;
+        audio.play();
+      }
     }, time);
   }
-  curColOfTokens[depth].firstElementChild.classList.add(color);
 };
 
 const updateLocalStrorage = curGrid => {
