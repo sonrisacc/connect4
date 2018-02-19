@@ -16,14 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sonrisacc/waterFall.git"
+    "url": "git+https://github.com/sonrisacc/connect4.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sonrisacc/waterFall/issues"
-  },
-  "homepage": "https://github.com/sonrisacc/waterFall#readme",
+
+  "homepage": "https://github.com/sonrisacc/connect4#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
