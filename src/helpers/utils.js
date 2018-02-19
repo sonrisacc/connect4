@@ -1,4 +1,5 @@
 const event = require('./eventHandlers');
+const init = require('./initData');
 
 const domBoardGenerator = target => {
   const colNum = 7;
@@ -34,11 +35,12 @@ const resetGame = myNode => {
   while (myNode.firstChild) {
     myNode.removeChild(myNode.firstChild);
   }
-  // reset local storage
-  // reset colMaxDepth
-  // reset curCol
+  init.initColMaxDepth();
+  init.initBoard();
+  init.initTempDomState();
   domBoardGenerator(myNode);
 };
+
 const closeModal = () => {
   const modal = document.getElementById('showWinner');
   modal.style.display = 'none';
