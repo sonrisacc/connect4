@@ -25,9 +25,16 @@ const annimateTokenDrop = (curColName, depth) => {
   const color = document.getElementById('curColor').innerHTML;
   const curColOfTokens = document.querySelector(`.col.${curColName}`).children;
   // will add annimation later
-  // for (let i = 0; i < depth.length; i++) {
+  for (let i = 0; i < depth; i++) {
+    console.log('hey');
+    curColOfTokens[i].firstElementChild.classList.add(color);
+    const time = 10 + i * 30;
+    setTimeout(() => {
+      console.log('anni running', i);
+      curColOfTokens[i].firstElementChild.classList.remove(color);
+    }, time);
+  }
   curColOfTokens[depth].firstElementChild.classList.add(color);
-  // }
 };
 
 const updateLocalStrorage = curGrid => {
@@ -52,16 +59,17 @@ const findAndRemoveColor = e => {
 };
 
 const playerPlayed = () => {
-  // set limite when token overflowed
-
   const curCol = document.getElementById('curCol').innerText;
   const curColor = document.getElementById('curColor').innerText;
   const curGrid = JSON.parse(window.localStorage.getItem('colMaxDepth'));
   const curMaxDepth = curGrid[curCol];
   const curColNum = Number(curCol.slice(-1));
-  annimateTokenDrop(curCol, curMaxDepth);
-  referee.saveCurMove(curMaxDepth, curColNum, curColor); // row, col
 
+  if (curMaxDepth < 1) return;
+
+  annimateTokenDrop(curCol, curMaxDepth);
+
+  referee.saveCurMove(curMaxDepth, curColNum, curColor); // row, col
   curGrid[curCol] -= 1;
   updateLocalStrorage(curGrid);
   togglePlayer();
