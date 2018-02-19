@@ -31,10 +31,12 @@ const domBoardGenerator = target => {
 };
 
 const resetGame = myNode => {
-  console.log('running');
   while (myNode.firstChild) {
     myNode.removeChild(myNode.firstChild);
   }
+  // reset local storage
+  // reset colMaxDepth
+  // reset curCol
   domBoardGenerator(myNode);
 };
 

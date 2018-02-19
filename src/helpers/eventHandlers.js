@@ -52,14 +52,15 @@ const findAndRemoveColor = e => {
 };
 
 const playerPlayed = () => {
+  // set limite when token overflowed
+
   const curCol = document.getElementById('curCol').innerText;
+  const curColor = document.getElementById('curColor').innerText;
   const curGrid = JSON.parse(window.localStorage.getItem('colMaxDepth'));
   const curMaxDepth = curGrid[curCol];
-
+  const curColNum = curCol.slice(-1);
   annimateTokenDrop(curCol, curMaxDepth);
-  referee.saveCurMove(curMaxDepth, curCol); // row, col
-  referee.checkWinner();
-  referee.checkBoardisFull();
+  referee.saveCurMove(curMaxDepth, curColNum, curColor); // row, col
 
   curGrid[curCol] -= 1;
   updateLocalStrorage(curGrid);

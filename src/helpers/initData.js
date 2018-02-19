@@ -17,13 +17,14 @@ const initColMaxDepth = () => {
 
 const initBoard = () => {
   const board = [];
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 6; i++) {
     const row = [];
-    for (let j = 0; j < 1; j++) {
-      row.push('');
+    for (let j = 0; j < 7; j++) {
+      row.push(0);
     }
     board.push(row);
   }
+  console.log('board', board);
   initLocalStorage('board', board);
 };
 

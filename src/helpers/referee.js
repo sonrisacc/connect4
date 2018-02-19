@@ -1,7 +1,17 @@
-const saveCurMove = (row, col) => {};
+const checkWinner = board => {
+  // curGrid
+};
 
-const checkWinner = () => {};
+const checkBoardisFull = board => {};
 
-const checkBoardisFull = () => {};
+const saveCurMove = (row, col, color) => {
+  const value = color === 'red' ? 1 : 2;
+  const curGrid = JSON.parse(window.localStorage.getItem('board'));
 
-module.exports = { checkWinner, checkBoardisFull, saveCurMove };
+  curGrid[row - 1][col] = value;
+
+  checkWinner(curGrid);
+  checkBoardisFull(curGrid);
+};
+
+module.exports = { saveCurMove };
