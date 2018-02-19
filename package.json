@@ -7,10 +7,10 @@
     "node": "8.1.2"
   },
   "scripts": {
-    "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
-    "start": "node ./server index.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+    "start": "node server index.js",
     "build": "webpack --watch",
-    "dev": "nodemon ./server index.js",
+    "dev": "nodemon server index.js",
     "test": "jest"
   },
   "repository": {
