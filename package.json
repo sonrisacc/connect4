@@ -1,5 +1,5 @@
 {
-  "name": "waterfall",
+  "name": "connectfour",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,7 +22,8 @@
   "homepage": "https://github.com/sonrisacc/waterFall#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "webpack": "^3.11.0"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
@@ -32,7 +33,6 @@
     "eslint-plugin-prettier": "^2.5.0",
     "jest": "^22.1.4",
     "nodemon": "^1.14.11",
-    "prettier": "^1.10.2",
-    "webpack": "^3.10.0"
+    "prettier": "^1.10.2"
   }
 }
