@@ -21,9 +21,9 @@ app.use((err, req, res) => {
   res.status(err.status || 500);
 });
 
-const PORT = 8080;
-const HOST = 'localhost';
+const port = process.env.PORT || 8080;
+const host = 'localhost';
 
-app.listen(PORT, () => {
-  console.log(`listening on http://${HOST}:${PORT}`);
+app.listen(port, () => {
+  console.log(`listening on http://${host}:${port}`);
 });
