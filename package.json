@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "8.1.2"
+  },
   "scripts": {
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
     "start": "node ./server index.js",
