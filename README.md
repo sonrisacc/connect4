@@ -15,7 +15,7 @@ npm install
 3. Start connectFour in dev mode by running:
 
 ```sh
-npm run build
+npm run watch
 npm run dev
 ```
 
