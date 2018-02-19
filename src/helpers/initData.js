@@ -30,7 +30,6 @@ const initBoard = () => {
 
 const initTempDomState = () => {
   const curColor = document.getElementById('curColor');
-
   const curMaxDepth = document.getElementById('curMaxDepth');
   curColor.innerText = 'red';
   curMaxDepth.innerText = 5;

@@ -108,7 +108,7 @@ const saveCurMove = (row, col, color) => {
     const modal = document.getElementById('showWinner');
     const winnerContainer = document.getElementById('curWinner');
     const curWinner = document.getElementById('curColor').innerText;
-    winnerContainer.innerText = `${curWinner} Won!!`;
+    winnerContainer.innerText = `${curWinner} won!!`;
     modal.style.display = 'block';
   }
 };
