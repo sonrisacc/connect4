@@ -1,3 +1,5 @@
+const referee = require('./referee.js');
+
 const mouseOnToken = (curToken, color) => {
   curToken.classList.add(color);
 };
@@ -28,14 +30,7 @@ const annimateTokenDrop = (curColName, depth) => {
   // }
 };
 
-const dropToken = e => {
-  const curGrid = JSON.parse(window.localStorage.getItem('colMaxDepth'));
-  const curCol = updateCurCol(e);
-  const curMaxDepth = curGrid[curCol];
-  annimateTokenDrop(curCol, curMaxDepth);
-
-  // update curCol's max depth
-  curGrid[curCol] -= 1;
+const updateLocalStrorage = curGrid => {
   const newGrid = JSON.stringify(curGrid);
   window.localStorage.setItem('colMaxDepth', newGrid);
 };
@@ -56,9 +51,18 @@ const findAndRemoveColor = e => {
   mouseLeaveToken(curToken, color);
 };
 
-const playerPlayed = e => {
-  dropToken(e);
-  // checkWinner
+const playerPlayed = () => {
+  const curCol = document.getElementById('curCol').innerText;
+  const curGrid = JSON.parse(window.localStorage.getItem('colMaxDepth'));
+  const curMaxDepth = curGrid[curCol];
+
+  annimateTokenDrop(curCol, curMaxDepth);
+  referee.saveCurMove(curMaxDepth, curCol); // row, col
+  referee.checkWinner();
+  referee.checkBoardisFull();
+
+  curGrid[curCol] -= 1;
+  updateLocalStrorage(curGrid);
   togglePlayer();
 };
 

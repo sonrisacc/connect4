@@ -1,8 +1,8 @@
 const event = require('./eventHandlers');
 
-const boardGenerator = target => {
+const domBoardGenerator = target => {
   const colNum = 7;
-  const rowNum = 6;
+  const rowNum = 7; // 1 hidden row, 6 actual row
 
   for (let i = 0; i < colNum; i++) {
     const col = document.createElement('div');
@@ -30,4 +30,12 @@ const boardGenerator = target => {
   }
 };
 
-module.exports = { boardGenerator };
+const resetGame = myNode => {
+  console.log('running');
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+  }
+  domBoardGenerator(myNode);
+};
+
+module.exports = { domBoardGenerator, resetGame };

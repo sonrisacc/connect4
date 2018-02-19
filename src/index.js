@@ -1,7 +1,11 @@
 const utlis = require('./helpers/utils');
-const initData = require('./helpers/initData');
+const init = require('./helpers/initData');
 
 const base = document.querySelector('.base');
+const resetBtn = document.querySelector('.blueBtn.startGame');
 
-window.localStorage.setItem('colMaxDepth', JSON.stringify(initData));
-utlis.boardGenerator(base);
+init.initColMaxDepth();
+init.initBoard();
+
+utlis.domBoardGenerator(base);
+resetBtn.addEventListener('click', () => utlis.resetGame(base));
