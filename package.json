@@ -8,11 +8,10 @@
     "npm": "5.4.2"
   },
   "scripts": {
-    "heroku-postbuild": "npm run build",
     "build": "webpack --config webpack.config.js",
-    "start": "node server index.js",
+    "start": "node server/index.js",
     "watch": "webpack --watch",
-    "dev": "nodemon server index.js",
+    "dev": "nodemon server/index.js",
     "test": "jest"
   },
   "repository": {
